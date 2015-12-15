@@ -1,0 +1,21 @@
+html {
+  width: 100%
+}
+
+table {
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+.container {
+    width: 100%;
+  }
+}
