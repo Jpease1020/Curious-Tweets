@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy", as: "logout"
 
 
-  get "dashboard", to: "dashboard#index"  
+  get "dashboard", to: "dashboard#index"
   get "profile", to: "users#show", as: "profile"
+  resources :tweets, only: [:create, :update, :destroy]
 
 end
