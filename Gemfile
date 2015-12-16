@@ -42,6 +42,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'web-console'
+  gem 'pry-rails'
   # gem 'spring'
 end
 
