@@ -6,7 +6,7 @@
     <div class="panel-body">
       <div class="row">
         <% @friends.each do |friend| %>
-        <div class="well col-sm-3 col-md-3 col-lg-3">
+        <div class="well col-sm-12 col-md-12 col-lg-12">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h1 class="panel-title friend-title"><%= friend["screen_name"] %></h1>
@@ -17,7 +17,9 @@
                 <li>Name: <%= friend['name'] %></li>
                 <li>Description: <%= friend['description'] %></li>
                 <li>Last Tweet: <%= friend["status"]["text"] %></li>
+                <div class="col-sm-2 col-md-2 col-lg-2 unfollow">
                 <li><%= button_to "Unfollow", friend_path(friend["id"]), method: :delete, class: "btn btn-primary" %></li>
+              </div>
               </ul>
             </div>
           </div>
