@@ -9,8 +9,36 @@ class User < ActiveRecord::Base
     end
   end
 
+  def favorites_count
+    client.user.favorites_count
+  end
+
+  def followers_count
+    client.user['followers_count']
+  end
+
+  def friends_count
+    client.user["friends_count"]
+  end
+
+  def profile_image_url
+    client.user.profile_image_url.to_s.sub("_normal.",".")
+  end
+
+  def statuses_count
+    client.user["statuses_count"]
+  end
+
+  def dashboard_tweets
+    client.home_timeline
+  end
+
+  def my_tweets
+    client.user_timeline("Justin Pease")
+  end
+
   def client
-    Twitter::REST::Client.new do |config|
+    @client ||= Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['twitter_key']
       config.consumer_secret     = ENV['twitter_secret']
       config.access_token        = oauth_token

@@ -5,22 +5,22 @@
         <h1 class="panel-title">My Info</h1>
       </div>
       <div class="row panel-body" id="profile-img">
-        <%= image_tag @user.profile_image_url.to_s.sub("_normal.","."), size: "200x200" %>
+        <%= image_tag @user.profile_image_url, size: "200x200" %>
       </div>
       <div class="panel-body">
         <ul class="profile-info">
           <li><%= @user.name %></li>
-          <li>Screen Name: <%= @user['screen_name'] %></li>
-          <li>Followers: <%= @user['followers_count'] %></li>
-          <li>Following: <%= link_to "#{@user['friends_count']}", friends_path %></li>
-          <li>Tweets: <%= @user["statuses_count"] %></li>
+          <li>Screen Name: <%= @user.screen_name %></li>
+          <li>Followers: <%= @user.followers_count %></li>
+          <li>Following: <%= link_to @user.friends_count, friends_path %></li>
+          <li>Tweets: <%= @user.statuses_count %></li>
         </ul>
       </div>
     </div>
   </div>
   <div class='col-sm-6 col-md-6 col-lg-6'>
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="send-a-tweet">
         <%= form_tag tweets_path do %>
         <%= text_area_tag :tweet, nil, placeholder: "What's on your mind?", class: "form-control" %><br>
         <%= submit_tag "Tweet This!", class: "btn btn-primary" %>
