@@ -44,7 +44,7 @@
       <% @my_tweets.each do |tweet| %>
         <div class="panel-body">
           <ul class="list-group">
-            <li class="list-group-item"><h6 class="my-tweets">Retweeted <%= tweet["retweet_count"] %><%= button_to tweet_path(tweet), data: {confirm: "Are you sure?"}, method: :destroy do %>
+            <li class="list-group-item"><h6 class="my-tweets">Retweeted <%= tweet["retweet_count"] %><%= button_to tweet_path(tweet["id"]), data: {confirm: "Are you sure?"}, method: :delete do %>
                                   <i class="glyphicon glyphicon-trash"></i></h6>
                                 <% end %></li>
             <li class="list-group-item"><%= tweet.text %></li>
