@@ -8,5 +8,7 @@ class TweetsController < ApplicationController
   end
 
   def destroy
+    byebug
+    current_user.client.destroy_status(params[:tweet])
   end
 end

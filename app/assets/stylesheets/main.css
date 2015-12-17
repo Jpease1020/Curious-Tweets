@@ -1,3 +1,10 @@
+header {
+  background-color: #337AB7;
+  padding: 7px;
+  margin-top: -43px;
+  margin-bottom: 10px;
+}
+
 html {
   width: 100%
 }
@@ -23,3 +30,40 @@ h3 {
 .navbar {
   background-color: #0084B4 !important
 }
+
+ul.nav.navbar-nav {
+    width: 100%;
+    color: white;
+}
+
+.log.btn.btn-default {
+    position: absolute;
+    top: 42px;
+    right: 20px;
+}
+
+header h1 {
+    color: white;
+    font-weight: 100;
+    letter-spacing: 10px;
+    font-size: 32;
+}
+
+.my-tweets form.button_to {
+    /* text-align: right; */
+    float: right;
+}
+
+.profile-info {
+    list-style-type: none;
+    padding-left: 0px;
+}
+/*ul.navbar_links {
+    position: absolute;
+    right: 40px;
+    top: 12px;
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 5px;
+    list-style-type: none;
+}*/
