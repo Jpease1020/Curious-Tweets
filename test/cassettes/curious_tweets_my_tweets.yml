@@ -1,0 +1,147 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://8MtDo0rvuyCWrnZm1sYAq8CNZ:Yn2prQ9PUp7CIH2LRCB1Plz0AEmKyZelcDdkg4hMzT6wJG3Pwq@api.twitter.com/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - TwitterRubyGem/5.15.0
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '153'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 17 Dec 2015 10:09:56 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Thu, 17 Dec 2015 10:09:56 GMT
+      Ml:
+      - S
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A145034699613618671; Domain=.twitter.com; Path=/; Expires=Sat,
+        16-Dec-2017 10:09:56 UTC
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - b2d0bef7b20f278f1d0d0c61dd9b2a4b
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Response-Time:
+      - '121'
+      X-Transaction:
+      - fbc8eb208e055f34
+      X-Tsa-Request-Body-Time:
+      - '0'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Ua-Compatible:
+      - IE=edge,chrome=1
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"bearer","access_token":"AAAAAAAAAAAAAAAAAAAAAPzwjAAAAAAA66NM3VIvtqVa0%2FnmwOSE5cdeeLc%3DU82KCv65fUDU0l6vsmpfNNSITajkXZkP0EkQZHu33gHT3nuyFd"}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 10:09:56 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/statuses/user_timeline.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.15.0
+      Authorization:
+      - Bearer AAAAAAAAAAAAAAAAAAAAAPzwjAAAAAAA66NM3VIvtqVa0%2FnmwOSE5cdeeLc%3DU82KCv65fUDU0l6vsmpfNNSITajkXZkP0EkQZHu33gHT3nuyFd
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Authorization Required
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '99'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 17 Dec 2015 10:09:56 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Thu, 17 Dec 2015 10:09:56 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A145034699651298650; Domain=.twitter.com; Path=/; Expires=Sat,
+        16-Dec-2017 10:09:56 UTC
+      Status:
+      - 401 Unauthorized
+      Strict-Transport-Security:
+      - max-age=631138519
+      Www-Authenticate:
+      - OAuth realm="https://api.twitter.com"
+      X-Access-Level:
+      - read
+      X-Connection-Hash:
+      - fa68f6d232a9e1338a65c75fc839b42a
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '299'
+      X-Rate-Limit-Reset:
+      - '1450347896'
+      X-Response-Time:
+      - '13'
+      X-Transaction:
+      - 1bc3ae9f616eb89d
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"request":"\/1.1\/statuses\/user_timeline.json","error":"Not authorized."}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 10:09:56 GMT
+recorded_with: VCR 3.0.0

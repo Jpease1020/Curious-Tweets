@@ -9,11 +9,60 @@ require 'webmock'
 require 'vcr'
 
 class ActiveSupport::TestCase
-  fixtures :all
+  VCR.configure do |config|
+    config.cassette_library_dir = "test/vcr_cassettes"
+    config.hook_into :webmock
+  end
+end
+
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
+
+  def stub_omniauth
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+      provider: 'twitter',
+      extra: {
+        raw_info: {
+          uid: "1234",
+          name: "Justin Pease",
+          screen_name: "Justin Pease",
+        }
+      },
+      credentials: {
+        token: "pizza",
+        secret: "secretpizza"
+      }
+    })
+  end
 
   VCR.configure do |config|
-    config.cassette_library_dir = "test/cassetts"
-    config.hook_into(:webmock)
+    config.cassette_library_dir = 'test/cassettes'
+    config.hook_into :webmock
   end
 
 end
+
+
+
+  #
+  # def login_user
+  #   sample_tweets = [OpenStruct.new(text: "test tweet 1"),
+  #                    OpenStruct.new(text: "test tweet 2")]
+  #
+  #   TwitterService.stub_any_instance(:tweets_from_feed, sample_tweets) do
+  #     visit root_path
+  #     click_link "Log In"
+  #   end
+  # end
+    #
+    # OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+    #     provider: "twitter",
+    #     uid: "1234",
+    #     extra: { raw_info: { screen_name: "candy",
+    #                          name: "Candy Cat",
+    #                          followers_count: 21,
+    #                          friends_count: 23,
+    #                          statuses_count: 56789,
+    #                          profile_image_url: "http://pbs.twimg.com/profile_images/647059117501054976/qPV7xp3t_normal.jpg" } },
+    #     credentials: { token: "candy_treats", secret: "so_many_treats" } })

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-# class UserTest < ActiveSupport::TestCase
+class UserTest < ActiveSupport::TestCase
 #   test "find by" do
 #     VCR.use_cassette("") do
 #       committees = service.committees(chamber: "senate")
@@ -12,4 +12,4 @@ require 'test_helper'
 #     end
 #   end
 #
-# end
+ end
