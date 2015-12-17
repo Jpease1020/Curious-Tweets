@@ -8,4 +8,9 @@ class TweetsController < ApplicationController
     current_user.client.destroy_status(params["id"])
     redirect_to dashboard_path
   end
+
+  def retweet
+    current_user.client.retweet(params["tweet"])
+    redirect_to dashboard_path
+  end
 end
