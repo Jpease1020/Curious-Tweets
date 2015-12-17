@@ -8,8 +8,7 @@
         <%= image_tag @user.profile_image_url.to_s.sub("_normal.","."), size: "200x200" %>
       </div>
       <div class="panel-body">
-        <ul>
-          <li><%= link_to "My Profile", profile_path %></li>
+        <ul class="profile-info">
           <li><%= @user.name %></li>
           <li>Screen Name: <%= @user['screen_name'] %></li>
           <li>Followers: <%= @user['followers_count'] %></li>
@@ -21,16 +20,11 @@
   </div>
   <div class='col-sm-6 col-md-6 col-lg-6'>
     <div class="panel panel-default">
-      <div class="panel-body">
+      <div class="panel-heading">
         <%= form_tag tweets_path do %>
         <%= text_area_tag :tweet, nil, placeholder: "What's on your mind?", class: "form-control" %><br>
         <%= submit_tag "Tweet This!", class: "btn btn-primary" %>
         <% end %>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">What's Trending Now</h3>
       </div>
       <% @tweets.each do |tweet| %>
         <div class="panel-body">
@@ -50,7 +44,9 @@
       <% @my_tweets.each do |tweet| %>
         <div class="panel-body">
           <ul class="list-group">
-            <li class="list-group-item"><h6>Retweeted <%= tweet["retweet_count"] %></h6></li>
+            <li class="list-group-item"><h6 class="my-tweets">Retweeted <%= tweet["retweet_count"] %><%= button_to tweet_path(tweet), data: {confirm: "Are you sure?"}, method: :destroy do %>
+                                  <i class="glyphicon glyphicon-trash"></i></h6>
+                                <% end %></li>
             <li class="list-group-item"><%= tweet.text %></li>
           </ul>
         </div>
