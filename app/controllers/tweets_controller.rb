@@ -8,7 +8,8 @@ class TweetsController < ApplicationController
   end
 
   def update
-    current_user.client.update(params["id"], text: "I can updat a tweet")
+    byebug
+    current_user.client.update(params["id"])
     redirect_to dashboard_path
   end
 

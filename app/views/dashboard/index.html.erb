@@ -31,9 +31,16 @@
           <ul class="list-group">
             <li class="list-group-item"><%= image_tag(tweet["user"]["profile_image_url"].to_s.sub("_normal.","."), size: "25x25") %>
               <h6><%= tweet['user']['name'] %> | @<%= tweet['user']['screen_name'] %> | Retweeted <%= tweet["retweet_count"] %>
-                <%= link_to favorites_path(tweet: tweet.id), method: :post do %>
-                                      <i class="glyphicon glyphicon-heart"></i></h6>
-                                    <% end %></li></h6></li>
+                <% if tweet["favorited"] == true %>
+                 <%= button_to favorite_path(tweet["id"]), method: :delete do %>
+                                      <i class="glyphicon glyphicon-heart"></i>
+                                    <% end %></i>
+                <% else %>
+                                    <%= link_to favorites_path(tweet: tweet.id), method: :post do %>
+                                    <i class="glyphicon glyphicon-heart favorite"></i>
+                                    <% end %></i>
+                <% end %>
+              </h6></li>
             <li class="list-group-item"><%= tweet.text %></li>
           </ul>
         </div>
@@ -48,10 +55,11 @@
       <% @my_tweets.each do |tweet| %>
         <div class="panel-body">
           <ul class="list-group">
-            <li class="list-group-item"><h6 class="my-tweets">Retweeted <%= tweet["retweet_count"] %><%= button_to tweet_path(tweet["id"]), data: {confirm: "Are you sure?"}, method: :delete do %>
-                                  <i class="glyphicon glyphicon-trash"></i></h6>
-                                <% end %></li>
-            <li class="list-group-item"><%= link_to 'edit this tweet', edit_tweet_path(tweet["id"])%></li>
+            <li class="list-group-item"><h6 class="my-tweets">Retweeted <%= tweet["retweet_count"] %> |
+              <%= link_to 'Edit', edit_tweet_path(tweet["id"])%> <%= button_to tweet_path(tweet["id"]),
+                  data: {confirm: "Are you sure?"}, method: :delete do %>
+                  <i class="glyphicon glyphicon-trash"></i></h6>
+              <% end %></li>
             <li class="list-group-item"><%= tweet.text %></li>
           </ul>
         </div>
