@@ -84,7 +84,9 @@ ul.friends {
     padding-right: 33px;
 }
 
-
+h1.panel-title.friend-title {
+    font-size: 23px;
+}
 
 
 /*ul.navbar_links {
