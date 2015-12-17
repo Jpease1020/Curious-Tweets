@@ -73,6 +73,20 @@ h1.panel-title {
 .favorite {
     color: red;
 }
+
+ul.friends {
+    list-style-type: none;
+}
+
+.panel-body.friends-panel {
+    padding: 0px;
+    padding-top: 10px;
+    padding-right: 33px;
+}
+
+
+
+
 /*ul.navbar_links {
     position: absolute;
     right: 40px;
