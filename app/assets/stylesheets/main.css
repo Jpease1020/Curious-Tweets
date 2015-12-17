@@ -58,6 +58,17 @@ header h1 {
     list-style-type: none;
     padding-left: 0px;
 }
+
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 25px;
+    color: inherit;
+}
+
+h1.panel-title {
+    font-size: 32px;
+}
 /*ul.navbar_links {
     position: absolute;
     right: 40px;
