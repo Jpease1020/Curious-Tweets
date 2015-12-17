@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get "dashboard", to: "dashboard#index"
   get "profile", to: "users#show", as: "profile"
   resources :tweets, only: [:create, :update, :destroy]
-
+  resources :favorites, only: [:create, :destroy]
 end
