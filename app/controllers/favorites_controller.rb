@@ -6,6 +6,7 @@ class FavoritesController < ApplicationController
   end
 
   def delete
+    
     current_user.client.unfavorite(params["tweet"])
     redirect_to dashboard_path
   end

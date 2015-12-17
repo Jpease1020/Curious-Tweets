@@ -26,25 +26,7 @@
         <%= submit_tag "Tweet This!", class: "btn btn-primary" %>
         <% end %>
       </div>
-      <% @tweets.each do |tweet| %>
-        <div class="panel-body">
-          <ul class="list-group">
-            <li class="list-group-item"><%= image_tag(tweet["user"]["profile_image_url"].to_s.sub("_normal.","."), size: "25x25") %>
-              <h6><%= tweet['user']['name'] %> | @<%= tweet['user']['screen_name'] %> | Retweeted <%= tweet["retweet_count"] %>
-                <% if tweet["favorited"] == true %>
-                 <%= button_to favorite_path(tweet["id"]), method: :delete do %>
-                                      <i class="glyphicon glyphicon-heart"></i>
-                                    <% end %></i>
-                <% else %>
-                                    <%= link_to favorites_path(tweet: tweet.id), method: :post do %>
-                                    <i class="glyphicon glyphicon-heart favorite"></i>
-                                    <% end %></i>
-                <% end %>
-              </h6></li>
-            <li class="list-group-item"><%= tweet.text %></li>
-          </ul>
-        </div>
-      <% end %>
+      <!-- <%= render partial: "dashboard/tweet_stream" %> -->
     </div>
   </div>
   <div class='col-sm-3 col-md-3 col-lg-3'>
@@ -52,18 +34,7 @@
       <div class="panel-heading">
         <h2 class="panel-title">My Recent Tweets</h2>
       </div>
-      <% @my_tweets.each do |tweet| %>
-        <div class="panel-body">
-          <ul class="list-group">
-            <li class="list-group-item"><h6 class="my-tweets">Retweeted <%= tweet["retweet_count"] %> |
-              <%= link_to 'Edit', edit_tweet_path(tweet["id"])%> <%= button_to tweet_path(tweet["id"]),
-                  data: {confirm: "Are you sure?"}, method: :delete do %>
-                  <i class="glyphicon glyphicon-trash"></i></h6>
-              <% end %></li>
-            <li class="list-group-item"><%= tweet.text %></li>
-          </ul>
-        </div>
-      <% end %>
+      <%= render partial: "dashboard/my_tweets" %>
     </div>
   </div>
 </div>

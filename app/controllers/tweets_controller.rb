@@ -4,15 +4,6 @@ class TweetsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def edit
-  end
-
-  def update
-    byebug
-    current_user.client.update(params["id"])
-    redirect_to dashboard_path
-  end
-
   def destroy
     current_user.client.destroy_status(params["id"])
     redirect_to dashboard_path
