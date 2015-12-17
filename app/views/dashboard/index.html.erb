@@ -2,7 +2,7 @@
   <div class='col-sm-3 col-md-3 col-lg-3'>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">My Info</h3>
+        <h1 class="panel-title">My Info</h1>
       </div>
       <div class="panel-body">
         <%= image_tag @user.profile_image_url.to_s.sub("_normal.","."), size: "200x200" %>
@@ -39,7 +39,7 @@
   <div class='col-sm-3 col-md-3 col-lg-3'>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">My Recent Tweets</h3>
+        <h2 class="panel-title">My Recent Tweets</h2>
       </div>
       <% @my_tweets.each do |tweet| %>
         <div class="panel-body">
