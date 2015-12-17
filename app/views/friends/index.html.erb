@@ -17,7 +17,7 @@
                 <li>Name: <%= friend['name'] %></li>
                 <li>Description: <%= friend['description'] %></li>
                 <li>Last Tweet: <%= friend["status"]["text"] %></li>
-                <li><%= button_to "Unfollow", friend_path(friend["id"]), data: {confirm: "Are you sure?"}, method: :delete, class: "btn btn-primary" %></li>
+                <li><%= button_to "Unfollow", friend_path(friend["id"]), method: :delete, class: "btn btn-primary" %></li>
               </ul>
             </div>
           </div>

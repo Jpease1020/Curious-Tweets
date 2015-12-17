@@ -76,6 +76,7 @@ h1.panel-title {
 
 ul.friends {
     list-style-type: none;
+    margin-left: -20px;
 }
 
 .panel-body.friends-panel {
@@ -87,7 +88,6 @@ ul.friends {
 h1.panel-title.friend-title {
     font-size: 23px;
 }
-
 
 /*ul.navbar_links {
     position: absolute;
