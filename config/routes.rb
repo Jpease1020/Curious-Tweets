@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :tweets, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
+  resources :friends, only: [:index, :create, :destroy]
 
   post "retweet", to: "tweets#retweet"
 end

@@ -1,0 +1,31 @@
+
+
+<div class="container col-sm-12 col-md-12 col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">Who I Follow</h1> <%= link_to "Dashboard", dashboard_path %> 
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <% @friends.each do |friend| %>
+        <div class="well col-sm-3 col-md-3 col-lg-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h1 class="panel-title"><%= friend["screen_name"] %></h1>
+            </div>
+            <div class="panel-body friends-panel">
+              <ul class="friends">
+                <li><%= image_tag friend.profile_image_url.to_s.sub("_normal.","."), size: "50x50" %></li>
+                <li>Name: <%= friend['name'] %></li>
+                <li>Description: <%= friend['description'] %></li>
+                <li>Last Tweet: <%= friend["status"]["text"] %></li>
+                <li><%= button_to "Unfollow", friend_path(friend["id"]), data: {confirm: "Are you sure?"}, method: :delete, class: "btn btn-primary" %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
