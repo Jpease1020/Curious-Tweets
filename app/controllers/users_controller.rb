@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
     @user = current_user.client.user
-    #have the route call the model, the model call the services 
+    @tweets = current_user.client.home_timeline
   end
 end

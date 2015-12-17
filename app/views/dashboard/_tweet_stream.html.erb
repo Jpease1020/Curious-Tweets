@@ -4,15 +4,12 @@
       <li class="list-group-item"><%= image_tag(tweet["user"]["profile_image_url"].to_s.sub("_normal.","."), size: "25x25") %>
         <h6><%= tweet['user']['name'] %> | @<%= tweet['user']['screen_name'] %> | Retweeted <%= tweet["retweet_count"] %>
           <% if tweet["favorited"] == true %>
-           <%= button_to favorite_path(tweet["id"]), method: :delete do %>
-                                <i class="glyphicon glyphicon-heart"></i>
-                              <% end %></i>
+            <%= link_to favorite_path(tweet["id"]), method: :delete do %><i class="glyphicon glyphicon-heart favorite"></i><% end %>
           <% else %>
-                              <%= link_to favorites_path(tweet: tweet.id), method: :post do %>
-                              <i class="glyphicon glyphicon-heart favorite"></i>
-                              <% end %></i>
+            <%= button_to favorites_path(tweet: tweet.id) do %><i class="glyphicon glyphicon-heart"></i><% end %>
           <% end %>
-        </h6></li>
+        </h6>
+      </li>
       <li class="list-group-item"><%= tweet.text %></li>
     </ul>
   </div>
