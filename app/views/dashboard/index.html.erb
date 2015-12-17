@@ -51,6 +51,7 @@
             <li class="list-group-item"><h6 class="my-tweets">Retweeted <%= tweet["retweet_count"] %><%= button_to tweet_path(tweet["id"]), data: {confirm: "Are you sure?"}, method: :delete do %>
                                   <i class="glyphicon glyphicon-trash"></i></h6>
                                 <% end %></li>
+            <li class="list-group-item"><%= link_to 'edit this tweet', edit_tweet_path(tweet["id"])%></li>
             <li class="list-group-item"><%= tweet.text %></li>
           </ul>
         </div>
