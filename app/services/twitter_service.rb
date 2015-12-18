@@ -8,4 +8,27 @@ class TwitterService
           config.access_token_secret = user.oauth_token_secret
         end
     end
+
+    def user_info
+      client.user
+    end
+
+    def dashboard_tweets
+
+    end
+
+    def dashboard_tweet(id)
+
+    end
+
+    def my_tweets
+
+    end
+
+    def my_tweet(id)
+
+    end
+
+    
+    # build out the mehtods in here then apss them over to models/poros
 end

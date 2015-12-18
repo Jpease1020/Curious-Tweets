@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  attr_reader :client
+
   def self.from_omniauth(auth_info)
     where(uid: auth_info[:uid]).first_or_create do |new_user|
       new_user.uid                = auth_info.uid
@@ -9,12 +11,13 @@ class User < ActiveRecord::Base
     end
   end
 
-  # def client
-  #   Twitter::REST::Client.new do |config|
-  #     config.consumer_key        = ENV['twitter_key']
-  #     config.consumer_secret     = ENV['twitter_secret']
-  #     config.access_token        = oauth_token
-  #     config.access_token_secret = oauth_token_secret
-  #   end
-  # end
+  def client
+    @client ||= TwitterService.new(current_user).client
+  end
+
+  def self.my_tweets
+    client.user_timeline(@user)
+  end
 end
+
+# call the TwitterService here and take just the appropriate methods form them correlating to whatever model/poro this is (Tweets, MyTweets, User, etc) 
