@@ -5,6 +5,28 @@ header {
   margin-bottom: 10px;
 }
 
+body {
+  padding-top: 60px;
+}
+section {
+  overflow: auto;
+}
+textarea {
+  resize: vertical;
+}
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* header */
+.header {
+  height: 10vh;
+  text-align: center;
+}
+
 html {
   width: 100%
 }
@@ -88,6 +110,9 @@ h1.panel-title.friend-title {
     font-size: 23px;
 }
 
+.img-responsive {
+
+}
 
 /*ul.navbar_links {
     position: absolute;
