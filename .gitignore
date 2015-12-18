@@ -21,3 +21,6 @@
 
 # Ignore capybara Screenshots
 capybara-*.html
+
+# Ignore byebug history
+/.byebug_history
