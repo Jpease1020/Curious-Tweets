@@ -10,11 +10,4 @@ class User < ActiveRecord::Base
       new_user.oauth_token_secret = auth_info.credentials.secret
     end
   end
-
- # this goes into a MyTweets class
-  # def self.my_tweets
-  #   client.user_timeline(@user)
-  # end
 end
-
-# call the TwitterService here and take just the appropriate methods form them correlating to whatever model/poro this is (Tweets, MyTweets, User, etc)

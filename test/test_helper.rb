@@ -40,21 +40,8 @@ end
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
 
-  # attr_reader :user
-  # def user
-  #   # @user = OpenStruct.new(oauth_token: ENV["oauth_token"], oauth_token_secret: ENV["oauth_token_secret"])
-  #   @user = User.create(
-  #       uid: "338656919",
-  #       name: "Justin Pease",
-  #       screen_name: "JustinPease",
-  #       oauth_token: "338656919-WgC9e9ljkSWImJ6sBBI9wwkxXIoCGGsEJPtQHJi5",
-  #       oauth_token_secret: "UOEXn7J8RPRuY11ELz6xzluRk8BxQFs0RiNxP2V4hBExv")
-  # end
-
   def setup
-    # user
     Capybara.app = CuriousTweets::Application
-    # @client = TwitterService.new(user).client
     stub_omniauth
   end
 
