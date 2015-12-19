@@ -6,9 +6,9 @@ class DashboardController < ApplicationController
   end
 
   def index
-    @user = client.user
+    @user_info = client.user
     @tweets = client.home_timeline
-    @my_tweets = User.my_tweetsclient
+    @my_tweets = client.user_timeline(@user)
   end
 end
 

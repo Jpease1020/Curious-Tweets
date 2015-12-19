@@ -5,15 +5,15 @@
         <h1 class="panel-title">My Info</h1>
       </div>
       <div class="row panel-body" id="profile-img">
-        <%= image_tag @user.profile_image_url.to_s.sub("_normal.","."), size: "200x200", class: "img-responsive center-block" %></img>
+        <%= image_tag @user_info.profile_image_url.to_s.sub("_normal.","."), size: "200x200", class: "img-responsive center-block" %></img>
       </div>
       <div class="panel-body">
         <ul class="profile-info">
-          <li><%= @user.name %></li>
-          <li>Screen Name: <%= @user['screen_name'] %></li>
-          <li>Followers: <%= @user['followers_count'] %></li>
-          <li>Following: <%= link_to "#{@user['friends_count']}", friends_path %></li>
-          <li>Tweets: <%= @user["statuses_count"] %></li>
+          <li><%= @user_info.name %></li>
+          <li>Screen Name: <%= @user_info['screen_name'] %></li>
+          <li>Followers: <%= @user_info['followers_count'] %></li>
+          <li>Following: <%= link_to "#{@user_info['friends_count']}", friends_path %></li>
+          <li>Tweets: <%= @user_info["statuses_count"] %></li>
         </ul>
       </div>
     </div>

@@ -1,12 +1,17 @@
 class FavoritesController < ApplicationController
 
+  attr_reader :client
+  def client
+    @client ||= TwitterService.new(current_user).client
+  end
+
   def create
-    current_user.client.favorite(params["tweet"])
+    client.favorite(params["tweet"])
     redirect_to dashboard_path
   end
 
   def destroy
-    current_user.client.unfavorite(params["id"])
+    client.unfavorite(params["id"])
     redirect_to dashboard_path
   end
 end

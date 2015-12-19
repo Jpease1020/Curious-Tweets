@@ -10,25 +10,25 @@ class TwitterService
     end
 
     def user_info
-      client.user
+      client
     end
 
-    def dashboard_tweets
-
-    end
-
-    def dashboard_tweet(id)
-
-    end
-
-    def my_tweets
-
-    end
-
-    def my_tweet(id)
-
-    end
-
-    
-    # build out the mehtods in here then apss them over to models/poros
+    # def dashboard_tweets
+    #
+    # end
+    #
+    # def dashboard_tweet(id)
+    #
+    # end
+    #
+    # def my_tweets
+    #
+    # end
+    #
+    # def my_tweet(id)
+    #
+    # end
+    #
+    #
+    # # build out the mehtods in here then apss them over to models/poros
 end

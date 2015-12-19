@@ -11,13 +11,10 @@ class User < ActiveRecord::Base
     end
   end
 
-  def client
-    @client ||= TwitterService.new(current_user).client
-  end
-
-  def self.my_tweets
-    client.user_timeline(@user)
-  end
+ # this goes into a MyTweets class
+  # def self.my_tweets
+  #   client.user_timeline(@user)
+  # end
 end
 
-# call the TwitterService here and take just the appropriate methods form them correlating to whatever model/poro this is (Tweets, MyTweets, User, etc) 
+# call the TwitterService here and take just the appropriate methods form them correlating to whatever model/poro this is (Tweets, MyTweets, User, etc)
