@@ -2,11 +2,11 @@
   <div class="panel-body">
     <ul class="list-group">
       <li class="list-group-item">
-        <div ><%= image_tag(tweet["user"]["profile_image_url"].to_s.sub("_normal.","."), size: "25x25") %></div>
-        <h6><%= tweet['user']['name'] %> | @<%= tweet['user']['screen_name'] %> | Retweeted <%= tweet["retweet_count"] %> |
+        <div ><%= image_tag(tweet.user.profile_image_url.to_s.sub("_normal.","."), size: "25x25") %></div>
+        <h6><%= tweet.user.name %> | @<%= tweet.user.screen_name %> | Retweeted <%= tweet.retweet_count %> |
           <%= link_to retweet_path(tweet: tweet.id), method: :post do %><i class="glyphicon glyphicon-retweet"></i><% end %> |
-          <% if tweet["favorited"] == true %>
-            <%= link_to favorite_path(tweet["id"]), method: :delete do %><i class="glyphicon glyphicon-heart favorite"></i><% end %>
+          <% if tweet.favorited == true %>
+            <%= link_to favorite_path(tweet.id), method: :delete do %><i class="glyphicon glyphicon-heart favorite"></i><% end %>
           <% else %>
             <%= button_to favorites_path(tweet: tweet.id) do %><i class="glyphicon glyphicon-heart"></i><% end %>
           <% end %>
