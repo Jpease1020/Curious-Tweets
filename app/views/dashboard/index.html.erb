@@ -10,10 +10,10 @@
       <div class="panel-body">
         <ul class="profile-info">
           <li><%= @user_info.name %></li>
-          <li>Screen Name: <%= @user_info['screen_name'] %></li>
-          <li>Followers: <%= @user_info['followers_count'] %></li>
-          <li>Following: <%= link_to "#{@user_info['friends_count']}", friends_path %></li>
-          <li>Tweets: <%= @user_info["statuses_count"] %></li>
+          <li>Screen Name: <%= @user_info.screen_name %></li>
+          <li>Followers: <%= @user_info.followers_count %></li>
+          <li>Following: <%= link_to "#{@user_info.friends_count}", friends_path %></li>
+          <li>Tweets: <%= @user_info.statuses_count %></li>
         </ul>
       </div>
     </div>
