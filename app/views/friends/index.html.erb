@@ -9,16 +9,16 @@
         <div class="well col-sm-12 col-md-12 col-lg-12">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h1 class="panel-title friend-title"><%= friend["screen_name"] %></h1>
+              <h1 class="panel-title friend-title"><%= friend.screen_name %></h1>
             </div>
             <div class="panel-body friends-panel">
               <ul class="friends">
                 <li><%= image_tag friend.profile_image_url.to_s.sub("_normal.","."), size: "50x50" %></li>
-                <li>Name: <%= friend['name'] %></li>
-                <li>Description: <%= friend['description'] %></li>
-                <li>Last Tweet: <%= friend["status"]["text"] %></li>
+                <li>Name: <%= friend.name %></li>
+                <li>Description: <%= friend.description %></li>
+                <li>Last Tweet: <%= friend.status.text %></li>
                 <div class="col-sm-2 col-md-2 col-lg-2 unfollow">
-                <li><%= button_to "Unfollow", friend_path(friend["id"]), method: :delete, class: "btn btn-primary" %></li>
+                <li><%= button_to "Unfollow", friend_path(friend.id), method: :delete, class: "btn btn-primary" %></li>
               </div>
               </ul>
             </div>
