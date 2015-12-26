@@ -20,7 +20,7 @@
   </div>
   <div class='col-sm-6 col-md-6 col-lg-6'>
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="send-a-tweet">
         <%= form_tag tweets_path do %>
         <%= text_area_tag :tweet, nil, placeholder: "What's on your mind?", class: "form-control" %><br>
         <%= submit_tag "Tweet This!", class: "btn btn-primary" %>
