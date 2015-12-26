@@ -9,11 +9,9 @@ class UserFriendsTest < ActionDispatch::IntegrationTest
       click_link "login"
       assert_equal dashboard_path, current_path
       visit friends_path
-      within(".friends-panel") do
-        assert_equal 12, User.friends.count
-        first(link: "Unfollow").click
-        assert_equal 11. User.friends.count
-      end
+      assert_equal 12, User.friends.count
+      first(link: "Unfollow").click
+      assert_equal 11. User.friends.count
     end
   end
 end
